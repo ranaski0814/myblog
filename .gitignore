@@ -4,3 +4,7 @@ resources/
 .DS_Store
 node_modules/
 _vendor/
+
+public/
+resources/_gen/
+.hugo_build.lock
