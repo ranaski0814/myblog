@@ -356,7 +356,7 @@ body::before {
   }
 
   62% {
-    width: 15 em;
+    width: 15em;
   }
 
   90% {
@@ -377,5 +377,26 @@ body::before {
 
   50% {
     border-color: transparent;
+  }
+}
+
+/* Small-screen safety: keep the custom title and typing text readable. */
+@media (max-width: 720px) {
+  #header-title #logo {
+    padding: 0.18em 0.48em;
+    border-radius: 18px;
+  }
+
+  #header-title #logo h1,
+  #header-title #logo h1 a {
+    font-size: clamp(1.8rem, 9vw, 3.2rem) !important;
+    letter-spacing: 0.04em;
+  }
+
+  body::before {
+    top: 3.2rem;
+    left: 1rem;
+    font-size: 0.92rem;
+    max-width: calc(100vw - 2rem);
   }
 }

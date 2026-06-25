@@ -1,5 +1,5 @@
 ########################################
-# Rana overrides for hugo-theme-reimu
+# Rana overrides for official hugo-theme-reimu
 ########################################
 menu:
   - name: home
@@ -36,7 +36,7 @@ subtitle:
 
 banner: "images/home-banner.jpg"
 avatar: "rana-avatar.webp"
-cover: "/myblog/images/rana-snow.jpg"
+cover: "images/home-banner.jpg"
 toc: true
 
 sidebar:

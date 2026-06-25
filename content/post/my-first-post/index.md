@@ -1,12 +1,12 @@
 ---
-title: "My First Post"
-date: 2026-06-25T08:47:22+08:00
+title: "我的第一篇博客"
+date: 2025-01-01T00:00:00+08:00
 draft: false
 math: true
 toc: true
 sidebar: left
-banner: "/myblog/images/rana-snow.jpg"
-cover: "/myblog/images/rana-snow.jpg"
+banner: "images/post-header-1.jpg"
+cover: "images/post-card-1.jpg"
 categories:
   - 泛函分析
 tags:
