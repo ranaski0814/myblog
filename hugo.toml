@@ -1,0 +1,4 @@
+baseURL = 'https://ranaski0814.github.io/myblog/'
+languageCode = 'zh-cn'
+title = '我的技术博客'
+theme = 'PaperMod'
