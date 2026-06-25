@@ -1,0 +1,194 @@
+########################################
+# Rana overrides for hugo-theme-reimu
+########################################
+menu:
+  - name: home
+    url: ""
+    icon:
+  - name: archives
+    url: "archives"
+    icon:
+  - name: about
+    url: "about"
+    icon:
+
+mainSections: ["post"]
+author: "Rana"
+email: "hi.paraline@gmail.com"
+description: "数学、证明、笔记与一点点雪天二次元。"
+subtitle:
+  typing:
+    enable: true
+    strings:
+      - "欢迎来到 Rana 的数学小屋"
+      - "Baire、Banach 与一些证明细节"
+      - "Rana祈祷中，数学整理中……"
+    typeSpeed: 90
+    backSpeed: 40
+    backDelay: 1800
+    startDelay: 300
+    loop: true
+    shuffle: true
+    showCursor: true
+    cursorChar: "|"
+    smartBackspace: false
+  text: "欢迎来到 Rana 的数学小屋"
+
+banner: "images/home-banner.jpg"
+avatar: "rana-avatar.webp"
+cover: "/myblog/images/rana-snow.jpg"
+toc: true
+
+sidebar:
+  position: left
+  menu: true
+  article:
+    show_common: false
+
+widgets:
+  - recent_posts
+
+summary:
+  enable: false
+  style: 'subtitle'
+
+layout:
+  max_width: 1420px
+
+# Fonts: turn off remote Google font loading and prefer local fonts.
+font:
+  enable: false
+custom_font:
+  enable: false
+local_font:
+  article:
+    - "Times New Roman"
+    - "STKaiti"
+    - "华文楷体"
+    - "KaiTi"
+    - "楷体"
+    - serif
+  code:
+    - "Consolas"
+    - "Menlo"
+    - "Monaco"
+    - monospace
+
+dark_mode:
+  enable: false
+
+math:
+  katex:
+    enable: true
+  mathjax:
+    enable: false
+
+reimu_cursor:
+  enable: true
+
+preloader:
+  enable: true
+  text:
+    zh-CN: "少女祈祷中..."
+
+animation:
+  enable: true
+  options:
+    header:
+      title: slide-up
+      subTitle: slide-down
+    home:
+      post: fade-up
+      widget: fade-up
+      sidebar: fade-up
+    article:
+      whole: fade-up
+      date: zoom-in
+      category: zoom-in
+      tag: zoom-in
+      comment: zoom-in
+      reading: zoom-in
+      nav: fade-up
+
+firework:
+  enable: true
+  disable_on_mobile: true
+  options:
+    excludeElements: ["a", "button", "input", "textarea"]
+    particles:
+      - shape: circle
+        move: ["emit"]
+        easing: easeOutExpo
+        colors: ["var(--red-1)", "var(--red-2)", "var(--red-3)", "var(--red-4)"]
+        number: 16
+        duration: [900, 1400]
+        shapeOptions:
+          radius: [10, 22]
+          alpha: [0.22, 0.42]
+
+injector:
+  head_end: |
+    <link rel="stylesheet" href="/myblog/css/rana-reimu.css">
+  body_end: |
+    <script src="/myblog/js/rana-toc.js" defer></script>
+
+material_theme:
+  enable: false
+
+# Reimu internally names the accent variables --red-*.
+# Re-map them to a blue/white palette instead of the default red.
+internal_theme:
+  light:
+    --red-0: '#1c7ed6'
+    --red-1: '#339af0'
+    --red-2: '#74c0fc'
+    --red-3: '#a5d8ff'
+    --red-4: '#d0ebff'
+    --red-5: '#e7f5ff'
+    --red-5-5: '#f1f9ff'
+    --red-6: '#f8fbff'
+    --color-red-6-shadow: 'rgba(51, 154, 240, 0.42)'
+    --color-red-3-shadow: 'rgba(51, 154, 240, 0.20)'
+    --highlight-nav: '#eef8ff'
+    --highlight-scrollbar: '#c5e3ff'
+    --highlight-background: '#fbfdff'
+    --highlight-selection: '#d6ecff99'
+    --highlight-foreground: '#1f2937'
+    --highlight-comment: '#6b7280'
+    --highlight-red: '#d6336c'
+    --highlight-orange: '#e67700'
+    --highlight-yellow: '#f59f00'
+    --highlight-green: '#2f9e44'
+    --highlight-aqua: '#1098ad'
+    --highlight-blue: '#1864ab'
+    --highlight-purple: '#7048e8'
+    --highlight-deletion: '#c92a2a'
+    --highlight-deletion-bg: '#fff0f0'
+    --highlight-addition: '#2b8a3e'
+    --highlight-addition-bg: '#ebfbee'
+  dark:
+    --red-0: '#74c0fc'
+    --red-1: '#4dabf7'
+    --red-2: '#339af0'
+    --red-3: '#1c7ed6'
+    --red-4: 'rgba(116, 192, 252, 0.50)'
+    --red-5: 'rgba(116, 192, 252, 0.16)'
+    --red-5-5: 'rgba(116, 192, 252, 0.08)'
+    --red-6: 'rgba(116, 192, 252, 0.20)'
+    --highlight-nav: '#111827'
+    --highlight-scrollbar: '#374151'
+    --highlight-background: '#0f172a'
+    --highlight-selection: '#335d8855'
+    --highlight-foreground: '#dbeafe'
+    --highlight-comment: '#94a3b8'
+    --highlight-red: '#fb7185'
+    --highlight-orange: '#fdba74'
+    --highlight-yellow: '#fde68a'
+    --highlight-green: '#86efac'
+    --highlight-aqua: '#67e8f9'
+    --highlight-blue: '#93c5fd'
+    --highlight-purple: '#c4b5fd'
+    --highlight-deletion: '#fca5a5'
+    --highlight-deletion-bg: '#450a0a'
+    --highlight-addition: '#86efac'
+    --highlight-addition-bg: '#052e16'

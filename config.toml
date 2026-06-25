@@ -1,16 +1,50 @@
 baseURL = 'https://ranaski0814.github.io/myblog/'
 languageCode = 'zh-cn'
-title = '我的技术博客'
-theme = 'PaperMod'
+defaultContentLanguage = 'zh-cn'
+title = 'Rana的数学小屋'
+theme = 'reimu'
 
 [params]
   math = true
+  defaultTheme = 'light'
+  disableThemeToggle = false
+  ShowToc = true
+  TocOpen = true
+  UseHugoToc = true
+  ShowBreadCrumbs = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  env = 'production'
+  description = 'Rana的数学小屋：泛函分析、数学笔记与一点二次元。'
+
+[params.homeInfoParams]
+  Title = 'Rana的数学小屋'
+  Content = '这里收集泛函分析、数学证明与一些学习随记。蓝白雪景、小屋灯光，以及一点二次元气息。'
+
+[params.assets]
+  favicon = 'images/rana-snow.jpg'
+  favicon16x16 = 'images/rana-snow.jpg'
+  favicon32x32 = 'images/rana-snow.jpg'
+  apple_touch_icon = 'images/rana-snow.jpg'
+
+[[menu.main]]
+  identifier = 'posts'
+  name = '文章'
+  url = '/posts/'
+  weight = 10
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = false

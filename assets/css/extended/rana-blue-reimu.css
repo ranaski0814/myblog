@@ -1,0 +1,335 @@
+:root {
+    --theme: #f5fbff;
+    --entry: rgba(255, 255, 255, 0.88);
+    --primary: #173b63;
+    --secondary: #5b82a8;
+    --tertiary: #d7eafb;
+    --content: #24445f;
+    --hljs-bg: #eef7ff;
+    --code-bg: #edf7ff;
+    --border: rgba(93, 152, 211, 0.28);
+    --rana-blue: #68a8e8;
+    --rana-blue-deep: #2e6fae;
+    --rana-ice: #eaf7ff;
+    --rana-card-shadow: 0 18px 45px rgba(56, 117, 177, 0.16);
+}
+
+html[data-theme="dark"] {
+    --theme: #101a27;
+    --entry: rgba(17, 32, 48, 0.9);
+    --primary: #e7f5ff;
+    --secondary: #a7c8e9;
+    --tertiary: #1d3650;
+    --content: #d9ebfa;
+    --hljs-bg: #102233;
+    --code-bg: #172d43;
+    --border: rgba(126, 188, 244, 0.24);
+    --rana-card-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    font-family: "Times New Roman", "STKaiti", "华文楷体", "KaiTi", serif;
+    background:
+        radial-gradient(circle at top left, rgba(130, 195, 255, 0.34), transparent 32rem),
+        linear-gradient(180deg, #f7fcff 0%, #edf7ff 48%, #ffffff 100%);
+    letter-spacing: 0.01em;
+}
+
+html[data-theme="dark"] body {
+    background:
+        radial-gradient(circle at top left, rgba(77, 143, 206, 0.25), transparent 34rem),
+        linear-gradient(180deg, #0d1724 0%, #13263a 58%, #0d1724 100%);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    right: max(1.4rem, calc((100vw - 1120px) / 2));
+    bottom: 1.2rem;
+    width: min(34vw, 430px);
+    height: min(42vw, 520px);
+    pointer-events: none;
+    background: url('../../images/rana-snow.jpg') center / cover no-repeat;
+    border-radius: 34px;
+    opacity: 0.18;
+    filter: saturate(0.92) contrast(0.96);
+    box-shadow: 0 24px 70px rgba(43, 107, 168, 0.2);
+    z-index: 0;
+}
+
+html[data-theme="dark"] body::before {
+    opacity: 0.12;
+}
+
+body::after {
+    content: "✧  ❄  ✦  ❄  ✧";
+    position: fixed;
+    left: 1.2rem;
+    bottom: 1rem;
+    pointer-events: none;
+    color: rgba(82, 148, 211, 0.25);
+    font-size: 1.25rem;
+    letter-spacing: 0.75rem;
+    z-index: 0;
+}
+
+.header,
+.main,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    background: rgba(247, 252, 255, 0.72);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+html[data-theme="dark"] .header {
+    background: rgba(13, 23, 36, 0.7);
+}
+
+.logo a {
+    color: var(--rana-blue-deep);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 10px rgba(104, 168, 232, 0.22);
+}
+
+.logo a::before {
+    content: "❄ ";
+    color: var(--rana-blue);
+}
+
+.logo a::after {
+    content: " · 数学与雪";
+    color: var(--secondary);
+    font-size: 0.72em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.main {
+    max-width: 980px;
+}
+
+.first-entry,
+.post-entry,
+.post-single,
+.archive-posts,
+.terms-tags a {
+    border: 1px solid var(--border);
+    background: var(--entry);
+    box-shadow: var(--rana-card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.first-entry,
+.post-entry,
+.post-single {
+    border-radius: 24px;
+}
+
+.first-entry {
+    min-height: 250px;
+    background:
+        linear-gradient(110deg, rgba(255, 255, 255, 0.92), rgba(235, 248, 255, 0.78)),
+        url('../../images/rana-snow.jpg') right center / min(42%, 360px) auto no-repeat;
+}
+
+html[data-theme="dark"] .first-entry {
+    background:
+        linear-gradient(110deg, rgba(17, 32, 48, 0.96), rgba(20, 45, 68, 0.82)),
+        url('../../images/rana-snow.jpg') right center / min(42%, 360px) auto no-repeat;
+}
+
+.post-title,
+.entry-header h2,
+.home-info .entry-header h1 {
+    color: var(--rana-blue-deep);
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.md-content h1,
+.md-content h2,
+.md-content h3 {
+    color: var(--primary);
+    border-bottom: 1px dashed rgba(104, 168, 232, 0.32);
+    padding-bottom: 0.24em;
+}
+
+.post-content h1::before,
+.md-content h1::before {
+    content: "❄ ";
+    color: var(--rana-blue);
+}
+
+.post-content h2::before,
+.md-content h2::before {
+    content: "◇ ";
+    color: var(--rana-blue);
+}
+
+a {
+    color: var(--rana-blue-deep);
+}
+
+.post-content a,
+.md-content a {
+    box-shadow: 0 1px 0 rgba(104, 168, 232, 0.45);
+}
+
+code {
+    border: 1px solid rgba(104, 168, 232, 0.2);
+    border-radius: 7px;
+}
+
+.post-content pre,
+.md-content pre {
+    border: 1px solid rgba(104, 168, 232, 0.24);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.post-content img,
+.entry-cover img {
+    border-radius: 22px;
+    box-shadow: 0 18px 48px rgba(56, 117, 177, 0.18);
+}
+
+.toc {
+    position: fixed;
+    top: 6.6rem;
+    right: 1rem;
+    width: 292px;
+    max-height: calc(100vh - 8rem);
+    overflow: hidden;
+    z-index: 30;
+    border: 1px solid rgba(104, 168, 232, 0.32);
+    border-radius: 22px 0 0 22px;
+    background: rgba(255, 255, 255, 0.76);
+    box-shadow: 0 18px 48px rgba(56, 117, 177, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0.26;
+    transform: translateX(calc(100% - 46px));
+    transition: opacity 220ms ease, transform 260ms ease, background 220ms ease;
+}
+
+html[data-theme="dark"] .toc {
+    background: rgba(15, 30, 46, 0.78);
+}
+
+.toc:hover,
+.toc:focus-within,
+.toc[open] {
+    opacity: 0.96;
+}
+
+.toc:hover,
+.toc:focus-within {
+    transform: translateX(0);
+}
+
+.toc summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0.72rem 0.9rem;
+    color: var(--rana-blue-deep);
+    font-weight: 700;
+    list-style: none;
+}
+
+.toc summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc summary::before {
+    content: "☰";
+    display: inline-block;
+    width: 1.8rem;
+    color: var(--rana-blue);
+}
+
+.toc .inner {
+    max-height: calc(100vh - 13rem);
+    overflow-y: auto;
+    padding: 0 1rem 1rem 1rem;
+    scrollbar-width: thin;
+}
+
+.toc a {
+    display: block;
+    padding: 0.18rem 0;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 160ms ease, transform 160ms ease;
+}
+
+.toc a:hover,
+.toc a.is-active {
+    color: var(--rana-blue-deep);
+    transform: translateX(3px);
+}
+
+.toc ul {
+    padding-left: 0.82rem;
+}
+
+.footer {
+    color: var(--secondary);
+}
+
+@media (min-width: 1300px) {
+    .main {
+        max-width: 1040px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .toc {
+        width: 260px;
+        right: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    body::before {
+        width: 58vw;
+        height: 70vw;
+        opacity: 0.09;
+        right: -10vw;
+    }
+
+    .first-entry {
+        background: var(--entry);
+    }
+
+    .logo a::after {
+        display: none;
+    }
+
+    .toc {
+        position: static;
+        width: auto;
+        max-height: none;
+        opacity: 1;
+        transform: none;
+        border-radius: 18px;
+        margin: 1rem 0;
+    }
+
+    .toc .inner {
+        max-height: 42vh;
+    }
+}

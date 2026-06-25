@@ -1,0 +1,381 @@
+/* Rana custom layer for official hugo-theme-reimu. */
+:root {
+  --rana-blue-ink: #1f3b57;
+  --rana-blue: #2f8bd8;
+  --rana-blue-light: #eaf6ff;
+  --rana-panel: rgba(255, 255, 255, 0.86);
+  --rana-border: rgba(82, 164, 226, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+.article-entry,
+.article-entry p,
+.article-entry li,
+.article-entry blockquote,
+.article-entry table,
+.article-entry details,
+.sidebar-toc-wrapper,
+.sidebar-wrap {
+  font-family: "Times New Roman", "STKaiti", "华文楷体", "KaiTi", "楷体", serif !important;
+  letter-spacing: 0.01em;
+}
+
+code,
+pre,
+kbd,
+samp,
+.highlight,
+.chroma {
+  font-family: Consolas, Menlo, Monaco, "Courier New", monospace !important;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(138, 206, 255, 0.34), transparent 30rem),
+    radial-gradient(circle at 88% 16%, rgba(210, 238, 255, 0.42), transparent 26rem),
+    linear-gradient(180deg, #f8fcff 0%, #edf8ff 42%, #ffffff 100%);
+  color: var(--rana-blue-ink);
+}
+
+.header-wrapper,
+.article-inner,
+.sidebar-wrap,
+.post-wrap,
+.archive-wrap {
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  background-color: var(--rana-panel) !important;
+  border: 1px solid var(--rana-border);
+  box-shadow: 0 14px 36px rgba(60, 142, 205, 0.13);
+}
+
+.article-entry {
+  font-size: 18px;
+  line-height: 1.92;
+  padding-bottom: 1.4rem !important;
+}
+
+.article-entry p,
+.article-entry ul,
+.article-entry ol,
+.article-entry blockquote,
+.article-entry details {
+  margin-top: 1.05em !important;
+  margin-bottom: 1.05em !important;
+}
+
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4 {
+  color: #155e9f;
+  letter-spacing: 0.015em;
+  line-height: 1.35 !important;
+  scroll-margin-top: 92px;
+}
+
+.article-entry h1 {
+  font-size: clamp(2rem, 3.4vw, 3.05rem);
+}
+
+.article-entry h2 {
+  margin-top: 2.4em !important;
+  margin-bottom: 1.15em !important;
+  padding-bottom: 0.35em;
+  border-bottom: 1px dashed rgba(47, 139, 216, 0.34);
+}
+
+.article-entry h3 {
+  margin-top: 1.9em !important;
+}
+
+.article-entry strong {
+  color: #0b66ad;
+}
+
+.article-entry blockquote,
+.article-entry details {
+  border-left-color: rgba(51, 154, 240, 0.70) !important;
+  background: rgba(232, 246, 255, 0.72) !important;
+}
+
+.article-entry .katex-display,
+.article-entry mjx-container[display="true"] {
+  padding: 0.45em 0;
+  overflow-x: auto;
+}
+
+.article-entry img {
+  box-shadow: 0 16px 38px rgba(41, 128, 185, 0.16);
+}
+
+/* The official theme renders the article TOC in the sidebar.
+   Make article-page TOC a stable, fixed left index: faded at rest, bright on hover. */
+@media (min-width: 1200px) {
+  #content.sidebar-left:has(.sidebar-toc-sidebar) #sidebar,
+  #content.sidebar-right:has(.sidebar-toc-sidebar) #sidebar {
+    position: fixed !important;
+    top: 88px !important;
+    left: 22px !important;
+    right: auto !important;
+    bottom: 28px !important;
+    width: min(292px, 23vw) !important;
+    min-width: 252px !important;
+    max-height: calc(100vh - 116px) !important;
+    height: auto !important;
+    margin: 0 !important;
+    z-index: 12;
+    opacity: 0.34;
+    filter: saturate(0.75) brightness(0.98);
+    transition: opacity 0.22s ease, filter 0.22s ease, transform 0.22s ease;
+  }
+
+  #content.sidebar-left:has(.sidebar-toc-sidebar) #sidebar:hover,
+  #content.sidebar-right:has(.sidebar-toc-sidebar) #sidebar:hover,
+  #content.sidebar-left:has(.sidebar-toc-sidebar) #sidebar:focus-within,
+  #content.sidebar-right:has(.sidebar-toc-sidebar) #sidebar:focus-within {
+    opacity: 0.96;
+    filter: saturate(1.15) brightness(1.02);
+    transform: translateX(2px);
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-wrapper-container,
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-wrapper,
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-wrap {
+    height: 100% !important;
+    max-height: 100% !important;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-wrapper-container.sticky {
+    position: static !important;
+    top: auto !important;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-common-sidebar,
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-btn-wrapper {
+    display: none !important;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-sidebar,
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-sidebar.hidden {
+    display: flex !important;
+    padding: 18px 18px 14px !important;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper {
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .toc-title {
+    color: #155e9f !important;
+    font-size: 15px;
+    margin-bottom: 0.35rem;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper a {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper li {
+    margin: 7px 0 !important;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper .current > a,
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper .active > a {
+    color: #0b66ad !important;
+    font-weight: 700;
+  }
+
+  #content.sidebar-left:has(.sidebar-toc-sidebar),
+  #content.sidebar-right:has(.sidebar-toc-sidebar) {
+    box-sizing: border-box;
+    padding-left: 318px;
+    max-width: 1260px;
+  }
+
+  #content.sidebar-left:has(.sidebar-toc-sidebar) #main,
+  #content.sidebar-right:has(.sidebar-toc-sidebar) #main {
+    width: 100% !important;
+    max-width: 920px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1500px) {
+  #content.sidebar-left:has(.sidebar-toc-sidebar) #sidebar,
+  #content.sidebar-right:has(.sidebar-toc-sidebar) #sidebar {
+    left: 44px !important;
+    width: 310px !important;
+  }
+
+  #content.sidebar-left:has(.sidebar-toc-sidebar),
+  #content.sidebar-right:has(.sidebar-toc-sidebar) {
+    padding-left: 358px;
+    max-width: 1360px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .article-entry {
+    font-size: 17px;
+    line-height: 1.82;
+  }
+}
+
+
+/* ================================
+   Rana 首页标题：灰紫 + 烟粉
+   适合浅蓝白 / 二次元背景
+================================ */
+
+/* 标题区域整体 */
+#header-title {
+  text-align: center;
+}
+
+/* 主标题容器：半透明圆角矩形蒙版 */
+#header-title #logo {
+  display: inline-block;
+  padding: 0.22em 0.62em;
+  border-radius: 24px;
+  text-decoration: none !important;
+
+  background: rgba(255, 255, 255, 0.46);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow:
+    0 10px 30px rgba(91, 75, 138, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* 鼠标移到主标题容器上 */
+#header-title #logo:hover {
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    0 14px 36px rgba(91, 75, 138, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* 主标题文字：缩小版 */
+#header-title #logo h1,
+#header-title #logo h1 a {
+  font-size: clamp(2.25rem, 5.2vw, 4.8rem) !important;
+  color: #5b4b8a !important;
+
+  font-family: "Times New Roman", "STKaiti", "华文楷体", "KaiTi", "楷体", serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  margin: 0 !important;
+
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95),
+    0 3px 0 rgba(225, 214, 244, 0.55),
+    0 8px 20px rgba(91, 75, 138, 0.28);
+
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+/* 鼠标移到主标题上 */
+#header-title #logo:hover h1,
+#header-title #logo:hover h1 a {
+  color: #7b5fc7 !important;
+  text-shadow:
+    0 1px 0 rgb(144, 42, 247),
+    0 3px 0 rgba(238, 224, 255, 0.7),
+    0 10px 24px rgba(123, 95, 199, 0.34);
+}
+
+
+
+/* 隐藏 Reimu 原本的副标题 */
+#subtitle-wrap,
+#subtitle {
+  display: none !important;
+}
+
+/* 在页面左上角重新绘制一个循环打字机副标题 */
+body::before {
+  content: "Rana思考中......抹茶巴菲......";
+
+  position: absolute;
+  top: 4.2rem;      /* 调高度：数字越大越往下 */
+  left: 2.45rem;
+  z-index: 999999;
+
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+
+  width: 0;
+
+  font-size: clamp(0.9rem, 1.25vw, 1.15rem);
+  color: #0caaff;
+
+  font-family: "Times New Roman", "STKaiti", "华文楷体", "KaiTi", "楷体", serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+
+  text-shadow: none;
+  opacity: 0.96;
+
+  border-right: 2px solid rgba(12, 170, 255, 0.9);
+
+  animation:
+    rana-subtitle-loop 10s steps(23, end) infinite,
+    rana-subtitle-cursor 0.75s step-end infinite;
+}
+
+/* 循环打字：打出 → 停留 → 删除 → 停留 */
+@keyframes rana-subtitle-loop {
+  0% {
+    width: 0;
+  }
+
+  38% {
+    width: 15em;
+  }
+
+  62% {
+    width: 15 em;
+  }
+
+  90% {
+    width: 0;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* 光标闪烁 */
+@keyframes rana-subtitle-cursor {
+  0%,
+  100% {
+    border-color: rgba(12, 170, 255, 0.9);
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}

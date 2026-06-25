@@ -1,0 +1,30 @@
+<script>
+(function () {
+  var toc = document.querySelector('.toc');
+  if (!toc) return;
+  var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+  if (!links.length) return;
+  var headings = links.map(function (link) {
+    try {
+      return document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    } catch (e) {
+      return document.getElementById(link.hash.slice(1));
+    }
+  }).filter(Boolean);
+  function activate() {
+    var current = headings[0];
+    var offset = 120;
+    headings.forEach(function (heading) {
+      if (heading.getBoundingClientRect().top - offset <= 0) current = heading;
+    });
+    links.forEach(function (link) { link.classList.remove('is-active'); });
+    if (current) {
+      var active = toc.querySelector('a[href="#' + current.id.replace(/"/g, '\\"') + '"]');
+      if (active) active.classList.add('is-active');
+    }
+  }
+  window.addEventListener('scroll', activate, { passive: true });
+  window.addEventListener('resize', activate);
+  activate();
+})();
+</script>

@@ -1,11 +1,20 @@
-+++
-title = "我的第一篇博客"
-date = "2025-01-01T00:00:00+08:00"
-draft = false
-toc = true
-banner = "/images/post-header-1.jpg"
-cover = "/images/post-card-1.jpg"
-+++
+---
+title: "My First Post"
+date: 2026-06-25T08:47:22+08:00
+draft: false
+math: true
+toc: true
+sidebar: left
+banner: "/myblog/images/rana-snow.jpg"
+cover: "/myblog/images/rana-snow.jpg"
+categories:
+  - 泛函分析
+tags:
+  - Baire
+  - Banach-Steinhaus
+  - 数学
+---
+
 # 0. 概要
 
 众所周知，线性泛函分析的重要定理可以粗略分为两个系列，其一是由选择公理得到的 Hahn-Banach 定理及其一系列推论，另一是由 Baire 纲定理得到的一系列定理：开映射、逆算子、闭图像、共鸣一串定理。
