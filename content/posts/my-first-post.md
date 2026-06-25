@@ -133,12 +133,7 @@ E_x(f) = \langle f,K_x\rangle = \int_{[0,1]} f(t)K_x(t)\,dt
 by the Riesz representation theorem. We can see that
 
 \[
-\begin{aligned}
-A^2 &\ge \|K_x\|_2^2 \\
-&= \sum_{k=1}^{\infty} |\langle K_x,e_k\rangle|^2 \\
-&= \sum_{k=1}^{\infty} |E_x(e_k)|^2 \\
-&= \sum_{k=1}^{\infty} |e_k(x)|^2.
-\end{aligned}
+A^2 &\ge \|K_x\|_2^2 =\sum_{k=1}^{\infty} |\langle K_x,e_k\rangle|^2 = \sum_{k=1}^{\infty} |E_x(e_k)|^2 = \sum_{k=1}^{\infty} |e_k(x)|^2.
 \]
 
 Integrating this inequality over \([0,1]\) and using the monotone convergence theorem to exchange sum and integral yields
