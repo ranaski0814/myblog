@@ -2,3 +2,15 @@ baseURL = 'https://ranaski0814.github.io/myblog/'
 languageCode = 'zh-cn'
 title = '我的技术博客'
 theme = 'PaperMod'
+
+[params]
+  math = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
