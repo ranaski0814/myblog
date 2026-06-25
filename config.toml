@@ -1,40 +1,32 @@
 baseURL = 'https://ranaski0814.github.io/myblog/'
-languageCode = 'zh-cn'
-defaultContentLanguage = 'zh-cn'
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh-CN'
 title = 'Rana的数学小屋'
 theme = 'reimu'
+enableEmoji = true
+hasCJKLanguage = true
 
-[params]
-  math = true
-  defaultTheme = 'light'
-  disableThemeToggle = false
-  ShowToc = true
-  TocOpen = true
-  UseHugoToc = true
-  ShowBreadCrumbs = true
-  ShowReadingTime = true
-  ShowPostNavLinks = true
-  ShowCodeCopyButtons = true
-  env = 'production'
-  description = 'Rana的数学小屋：泛函分析、数学笔记与一点二次元。'
+# 关闭 RSS，避免首页/导航被误点成 index.xml。
+# 如果以后想恢复 RSS，可以删除这一行，并把 [outputs].home 改回 ['HTML', 'RSS']。
+disableKinds = ['RSS']
 
-[params.homeInfoParams]
-  Title = 'Rana的数学小屋'
-  Content = '这里收集泛函分析、数学证明与一些学习随记。蓝白雪景、小屋灯光，以及一点二次元气息。'
-
-[params.assets]
-  favicon = 'images/rana-snow.jpg'
-  favicon16x16 = 'images/rana-snow.jpg'
-  favicon32x32 = 'images/rana-snow.jpg'
-  apple_touch_icon = 'images/rana-snow.jpg'
-
-[[menu.main]]
-  identifier = 'posts'
-  name = '文章'
-  url = '/posts/'
-  weight = 10
+[languages]
+  [languages.zh-CN]
+    languageCode = 'zh-CN'
+    languageName = '简体中文'
+    weight = 1
+    hasCJKLanguage = true
+    title = 'Rana的数学小屋'
+    author = 'Rana'
 
 [markup]
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -43,8 +35,14 @@ theme = 'reimu'
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 3
-    ordered = false
+          inline = [['\(', '\)'], ['$', '$']]
+
+[outputs]
+  home = ['HTML']
+  section = ['HTML']
+  taxonomy = ['HTML']
+  term = ['HTML']
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

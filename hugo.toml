@@ -5,6 +5,10 @@ theme = 'reimu'
 enableEmoji = true
 hasCJKLanguage = true
 
+# 关闭 RSS，避免首页/导航被误点成 index.xml。
+# 如果以后想恢复 RSS，可以删除这一行，并把 [outputs].home 改回 ['HTML', 'RSS']。
+disableKinds = ['RSS']
+
 [languages]
   [languages.zh-CN]
     locale = 'zh-CN'
@@ -33,4 +37,11 @@ hasCJKLanguage = true
           inline = [['\(', '\)'], ['$', '$']]
 
 [outputs]
-  home = ['HTML', 'RSS']
+  home = ['HTML']
+  section = ['HTML']
+  taxonomy = ['HTML']
+  term = ['HTML']
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
