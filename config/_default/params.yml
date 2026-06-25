@@ -15,7 +15,7 @@ menu:
 mainSections: ["post"]
 author: "Rana"
 email: "hi.paraline@gmail.com"
-description: "数学、证明、笔记与一点点雪天二次元。"
+description: "数学笔记"
 subtitle:
   typing:
     enable: true
