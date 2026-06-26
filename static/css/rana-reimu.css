@@ -424,3 +424,37 @@ body:has(#content .article-inner) {
 .article-entry h6 {
   scroll-margin-top: 75px !important;
 }
+
+/* Rana final article-page overrides */
+
+/* 只移动文章页标题，不影响首页标题 */
+body:has(#content .article-inner) #header-title {
+  transform: translate(190px, 35px) !important;
+}
+
+/* 文章页目录字号 */
+@media (min-width: 1200px) {
+  #content:has(.sidebar-toc-sidebar) #sidebar .toc-title {
+    font-size: 21px !important;
+    line-height: 1.35 !important;
+  }
+
+  #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper a {
+    font-size: 19px !important;
+    line-height: 1.75 !important;
+  }
+}
+
+/* 锚点跳转位置：让小标题更靠上 */
+html {
+  scroll-padding-top: 55px !important;
+}
+
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4,
+.article-entry h5,
+.article-entry h6 {
+  scroll-margin-top: 55px !important;
+}

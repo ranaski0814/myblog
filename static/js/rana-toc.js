@@ -24,7 +24,7 @@
    - put target heading near the top instead of the middle
 */
 (function () {
-  var OFFSET = 75; // 数字越大，小标题离页面顶部越远；数字越小，越靠上
+  var OFFSET = 55; // 数字越大，小标题离页面顶部越远；数字越小，越靠上
 
   function decodeHash(hash) {
     if (!hash || hash === "#") return "";

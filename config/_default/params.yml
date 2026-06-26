@@ -128,9 +128,9 @@ firework:
 
 injector:
   head_end: |
-    <link rel="stylesheet" href="/myblog/css/rana-reimu.css">
+    <link rel="stylesheet" href="/myblog/css/rana-reimu.css?v=20260626-2">
   body_end: |
-    <script src="/myblog/js/rana-toc.js" defer></script>
+    <script src="/myblog/js/rana-toc.js?v=20260626-2" defer></script>
 
 material_theme:
   enable: false
