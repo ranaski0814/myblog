@@ -89,7 +89,7 @@ reimu_cursor:
 preloader:
   enable: true
   text:
-    zh-CN: "少女祈祷中..."
+    zh-CN: "和猫玩..."
 
 animation:
   enable: true
