@@ -172,14 +172,14 @@ body {
   }
 
   #content:has(.sidebar-toc-sidebar) #sidebar .toc-title {
-    color: #155e9f !important;
-    font-size: 15px;
-    margin-bottom: 0.35rem;
+  color: #155e9f !important;
+  font-size: 19px;
+  margin-bottom: 0.35rem;
   }
 
   #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper a {
-    font-size: 14px;
-    line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.6;
   }
 
   #content:has(.sidebar-toc-sidebar) #sidebar .sidebar-toc-wrapper li {
@@ -399,4 +399,28 @@ body::before {
     font-size: 0.92rem;
     max-width: calc(100vw - 2rem);
   }
+}
+
+/* 只移动文章页顶部标题，不影响首页主标题 */
+body:has(#content .article-inner) #header-title {
+  transform: translate(150px, 30px) !important;
+}
+
+
+/* 修正文章页锚点跳转位置，并防止横向滚动 */
+html {
+  scroll-padding-top: 75px;
+}
+
+body:has(#content .article-inner) {
+  overflow-x: hidden;
+}
+
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4,
+.article-entry h5,
+.article-entry h6 {
+  scroll-margin-top: 75px !important;
 }
